@@ -59,7 +59,7 @@ export function CourtsScreen() {
     <div
       id="panel-courts"
       role="tabpanel"
-      className="flex flex-col gap-5 px-5 pb-4"
+      className="flex h-full flex-col gap-4 overflow-hidden px-5 pb-2"
     >
       {/* Header */}
       <div className="pt-6">
@@ -83,7 +83,7 @@ export function CourtsScreen() {
       </div>
 
       {/* Venues List */}
-      <div className="flex flex-col gap-4">
+      <div className="hide-scrollbar flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto">
         {venues.map((venue, i) => (
           <article
             key={i}

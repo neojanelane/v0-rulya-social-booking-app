@@ -51,7 +51,7 @@ export function SportsScreen() {
     <div
       id="panel-sports"
       role="tabpanel"
-      className="flex flex-col gap-5 px-5 pb-4"
+      className="flex h-full flex-col gap-4 overflow-hidden px-5 pb-2"
     >
       {/* Header */}
       <div className="pt-6">
@@ -67,7 +67,7 @@ export function SportsScreen() {
       </div>
 
       {/* Sports Grid */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="hide-scrollbar min-h-0 flex-1 grid grid-cols-2 gap-4 overflow-y-auto">
         {sports.map((sport) => (
           <button
             key={sport.name}

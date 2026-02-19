@@ -88,7 +88,7 @@ export function ConnectScreen() {
     <div
       id="panel-connect"
       role="tabpanel"
-      className="flex flex-col gap-5 px-5 pb-4"
+      className="flex h-full flex-col gap-4 overflow-hidden px-5 pb-2"
     >
       {/* Header */}
       <div className="pt-6">
@@ -104,7 +104,7 @@ export function ConnectScreen() {
       </div>
 
       {/* Games Feed */}
-      <div className="flex flex-col gap-4">
+      <div className="hide-scrollbar flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto">
         {games.map((game, i) => (
           <article
             key={i}
