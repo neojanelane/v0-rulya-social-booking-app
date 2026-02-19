@@ -20,6 +20,18 @@ const sports: Sport[] = [
     activePlayers: "87 playing this week",
     tagline: "Tiny ball. Big ego.",
   },
+  {
+    name: "Basketball",
+    emoji: "\uD83C\uDFC0",
+    activePlayers: "63 playing this week",
+    tagline: "Buckets. No bench warmers.",
+  },
+  {
+    name: "Badminton",
+    emoji: "\uD83C\uDFF8",
+    activePlayers: "41 playing this week",
+    tagline: "Fast hands, faster rallies.",
+  },
 ]
 
 export function SportsScreen() {
@@ -43,7 +55,7 @@ export function SportsScreen() {
       </div>
 
       {/* Sports Grid */}
-      <div className="grid flex-1 grid-cols-2 gap-4">
+      <div className="grid flex-1 grid-cols-2 grid-rows-2 gap-4">
         {sports.map((sport) => (
           <button
             key={sport.name}
