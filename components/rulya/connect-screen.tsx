@@ -67,14 +67,14 @@ export function ConnectScreen() {
       className="flex h-full flex-col gap-4 overflow-hidden px-5 pb-2"
     >
       {/* Header */}
-      <div className="pt-6">
+      <div className="shrink-0 pt-4">
         <p className="mb-1 text-xs font-bold uppercase tracking-widest text-coral">
           Active Games
         </p>
         <h1 className="text-2xl font-extrabold leading-tight text-midnight text-balance">
           Skip the group chat. Just play.
         </h1>
-        <p className="mt-2 text-sm font-medium text-midnight/60">
+        <p className="mt-1 text-sm font-medium text-midnight/60">
           Solo players welcome. No awkward WhatsApp polls.
         </p>
       </div>
@@ -84,58 +84,62 @@ export function ConnectScreen() {
         {games.map((game, i) => (
           <article
             key={i}
-            className="relative flex flex-1 flex-col overflow-hidden rounded-2xl border-2 border-coral/40 bg-card p-4 shadow-sm transition-all duration-200 hover:border-coral hover:shadow-md"
+            className="relative flex flex-1 flex-col justify-between overflow-hidden rounded-2xl border-2 border-coral/40 bg-card p-4 shadow-sm transition-all duration-200 hover:border-coral hover:shadow-md"
           >
-            {/* Urgency Badge */}
-            {game.urgency && (
-              <div className="mb-3 inline-flex items-center gap-1 rounded-full bg-vivid/10 px-2.5 py-1">
-                <Zap className="h-3 w-3 text-vivid" />
-                <span className="text-[11px] font-bold uppercase tracking-wide text-vivid">
-                  {game.urgency}
+            <div>
+              {/* Urgency Badge */}
+              {game.urgency && (
+                <div className="mb-2 inline-flex items-center gap-1 rounded-full bg-vivid/10 px-2.5 py-1">
+                  <Zap className="h-3 w-3 text-vivid" />
+                  <span className="text-[11px] font-bold uppercase tracking-wide text-vivid">
+                    {game.urgency}
+                  </span>
+                </div>
+              )}
+
+              {/* Sport + Emoji */}
+              <div className="mb-2 flex items-start justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl" role="img" aria-hidden="true">
+                    {game.emoji}
+                  </span>
+                  <h2 className="text-base font-extrabold text-midnight">
+                    {game.sport}
+                  </h2>
+                </div>
+              </div>
+
+              {/* Details */}
+              <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs font-semibold text-midnight/70">
+                <span className="inline-flex items-center gap-1">
+                  <MapPin className="h-3.5 w-3.5 text-coral" />
+                  {game.location}
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  <Clock className="h-3.5 w-3.5 text-coral" />
+                  {game.time}
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  <Users className="h-3.5 w-3.5 text-coral" />
+                  {game.spotsFilled} joined
                 </span>
               </div>
-            )}
+            </div>
 
-            {/* Sport + Emoji */}
-            <div className="mb-3 flex items-start justify-between">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl" role="img" aria-hidden="true">
-                  {game.emoji}
-                </span>
-                <h2 className="text-base font-extrabold text-midnight">
-                  {game.sport}
-                </h2>
+            <div>
+              {/* Spots Bar */}
+              <div className="mb-3">
+                <SpotsBar
+                  filled={game.spotsFilled}
+                  total={game.spotsTotal}
+                />
               </div>
-            </div>
 
-            {/* Details */}
-            <div className="mb-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs font-semibold text-midnight/70">
-              <span className="inline-flex items-center gap-1">
-                <MapPin className="h-3.5 w-3.5 text-coral" />
-                {game.location}
-              </span>
-              <span className="inline-flex items-center gap-1">
-                <Clock className="h-3.5 w-3.5 text-coral" />
-                {game.time}
-              </span>
-              <span className="inline-flex items-center gap-1">
-                <Users className="h-3.5 w-3.5 text-coral" />
-                {game.spotsFilled} joined
-              </span>
+              {/* CTA */}
+              <button className="w-full rounded-xl bg-vivid py-3 text-sm font-extrabold uppercase tracking-wider text-cta transition-all duration-200 hover:bg-coral hover:shadow-lg active:scale-[0.98]">
+                Drop In
+              </button>
             </div>
-
-            {/* Spots Bar */}
-            <div className="mb-4">
-              <SpotsBar
-                filled={game.spotsFilled}
-                total={game.spotsTotal}
-              />
-            </div>
-
-            {/* CTA */}
-            <button className="w-full rounded-xl bg-vivid py-3 text-sm font-extrabold uppercase tracking-wider text-cta transition-all duration-200 hover:bg-coral hover:shadow-lg active:scale-[0.98]">
-              Drop In
-            </button>
           </article>
         ))}
       </div>
