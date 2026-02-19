@@ -28,30 +28,6 @@ const venues: Venue[] = [
     rating: 4.8,
     facilities: ["Showers", "Cafe"],
   },
-  {
-    name: "Leopardstown Pitch Club",
-    distance: "3.1km",
-    pricePerHour: "\u20AC20/hr",
-    nextSlot: "19:00",
-    rating: 4.3,
-    facilities: ["Floodlights", "Bar"],
-  },
-  {
-    name: "Rathmines Sports Hub",
-    distance: "4.0km",
-    pricePerHour: "\u20AC22/hr",
-    nextSlot: "21:00",
-    rating: 4.5,
-    facilities: ["Indoor", "Equipment hire"],
-  },
-  {
-    name: "Dalkey Community Courts",
-    distance: "5.8km",
-    pricePerHour: "\u20AC15/hr",
-    nextSlot: "17:00",
-    rating: 4.1,
-    facilities: ["Outdoor", "Free parking"],
-  },
 ]
 
 export function CourtsScreen() {
@@ -59,7 +35,7 @@ export function CourtsScreen() {
     <div
       id="panel-courts"
       role="tabpanel"
-      className="flex flex-col gap-5 px-5 pb-4"
+      className="flex flex-1 flex-col gap-5 px-5 pb-4"
     >
       {/* Header */}
       <div className="pt-6">
@@ -83,11 +59,11 @@ export function CourtsScreen() {
       </div>
 
       {/* Venues List */}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-1 flex-col gap-4">
         {venues.map((venue, i) => (
           <article
             key={i}
-            className="overflow-hidden rounded-2xl border-2 border-coral/40 bg-card p-4 shadow-sm transition-all duration-200 hover:border-coral hover:shadow-md"
+            className="flex flex-1 flex-col overflow-hidden rounded-2xl border-2 border-coral/40 bg-card p-4 shadow-sm transition-all duration-200 hover:border-coral hover:shadow-md"
           >
             {/* Venue Name + Rating */}
             <div className="mb-3 flex items-start justify-between">
@@ -119,7 +95,7 @@ export function CourtsScreen() {
             </div>
 
             {/* Facility Tags */}
-            <div className="mb-4 flex flex-wrap gap-2">
+            <div className="mt-auto mb-4 flex flex-wrap gap-2">
               {venue.facilities.map((f) => (
                 <span
                   key={f}

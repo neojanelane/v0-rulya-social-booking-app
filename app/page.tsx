@@ -13,11 +13,11 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<Tab>("connect")
 
   return (
-    <div className="mx-auto flex min-h-dvh max-w-md flex-col bg-ice">
+    <div className="mx-auto flex h-dvh max-w-md flex-col overflow-hidden bg-ice">
       <AppHeader />
 
-      {/* Main scrollable area */}
-      <main className="hide-scrollbar flex-1 overflow-y-auto">
+      {/* Main content area - no scroll */}
+      <main className="flex flex-1 flex-col overflow-hidden">
         {activeTab === "connect" && <ConnectScreen />}
         {activeTab === "courts" && <CourtsScreen />}
         {activeTab === "sports" && <SportsScreen />}
