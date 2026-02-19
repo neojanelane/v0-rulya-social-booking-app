@@ -1,14 +1,19 @@
 "use client"
 
+import Image from "next/image"
 import { Bell, Menu } from "lucide-react"
 
 export function AppHeader() {
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between border-b-2 border-coral/30 bg-ice/95 px-5 py-3 backdrop-blur-sm">
       <div className="flex items-center gap-2">
-        <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-vivid">
-          <span className="text-lg font-black text-cta">R</span>
-        </div>
+        <Image
+          src="/images/rulya-logo.png"
+          alt="Rulya mascot logo"
+          width={36}
+          height={36}
+          className="h-9 w-9 rounded-xl object-cover"
+        />
         <span className="text-xl font-black tracking-tight text-midnight">
           rulya
         </span>

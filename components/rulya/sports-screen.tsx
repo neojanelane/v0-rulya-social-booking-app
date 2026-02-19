@@ -15,10 +15,10 @@ const sports: Sport[] = [
     tagline: "The classic. No explanation needed.",
   },
   {
-    name: "Padel",
-    emoji: "\uD83C\uDFBE",
+    name: "Table Tennis",
+    emoji: "\uD83C\uDFD3",
     activePlayers: "87 playing this week",
-    tagline: "The sport that ate Dublin.",
+    tagline: "Tiny ball. Big ego.",
   },
   {
     name: "Basketball",

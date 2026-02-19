@@ -23,8 +23,8 @@ const games: Game[] = [
     urgency: "Filling fast",
   },
   {
-    sport: "Doubles Padel",
-    emoji: "\uD83C\uDFBE",
+    sport: "Doubles Table Tennis",
+    emoji: "\uD83C\uDFD3",
     location: "Grand Canal Dock",
     time: "Tomorrow @ 13:00",
     spotsTotal: 4,
