@@ -20,30 +20,6 @@ const sports: Sport[] = [
     activePlayers: "87 playing this week",
     tagline: "Tiny ball. Big ego.",
   },
-  {
-    name: "Basketball",
-    emoji: "\uD83C\uDFC0",
-    activePlayers: "63 playing this week",
-    tagline: "Buckets. No bench warmers.",
-  },
-  {
-    name: "Badminton",
-    emoji: "\uD83C\uDFF8",
-    activePlayers: "41 playing this week",
-    tagline: "Fast hands, faster rallies.",
-  },
-  {
-    name: "Tennis",
-    emoji: "\uD83C\uDFBE",
-    activePlayers: "55 playing this week",
-    tagline: "Deuce it out.",
-  },
-  {
-    name: "Volleyball",
-    emoji: "\uD83C\uDFD0",
-    activePlayers: "29 playing this week",
-    tagline: "Spike your evening plans.",
-  },
 ]
 
 export function SportsScreen() {
@@ -51,7 +27,7 @@ export function SportsScreen() {
     <div
       id="panel-sports"
       role="tabpanel"
-      className="flex flex-col gap-5 px-5 pb-4"
+      className="flex flex-1 flex-col gap-5 px-5 pb-4"
     >
       {/* Header */}
       <div className="pt-6">
@@ -67,11 +43,11 @@ export function SportsScreen() {
       </div>
 
       {/* Sports Grid */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid flex-1 grid-cols-2 gap-4">
         {sports.map((sport) => (
           <button
             key={sport.name}
-            className="group flex flex-col items-center gap-3 rounded-2xl border-2 border-coral/40 bg-card p-5 shadow-sm transition-all duration-200 hover:scale-[1.04] hover:border-coral hover:bg-coral/10 hover:shadow-md active:scale-[0.97]"
+            className="group flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-coral/40 bg-card p-5 shadow-sm transition-all duration-200 hover:scale-[1.04] hover:border-coral hover:bg-coral/10 hover:shadow-md active:scale-[0.97]"
           >
             {/* Emoji */}
             <span
