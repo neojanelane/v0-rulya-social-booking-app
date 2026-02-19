@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { AppHeader } from "@/components/rulya/app-header"
 import { BottomNav } from "@/components/rulya/bottom-nav"
 import { ConnectScreen } from "@/components/rulya/connect-screen"
@@ -11,6 +11,10 @@ type Tab = "connect" | "courts" | "sports"
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<Tab>("connect")
+
+  useEffect(() => {
+    window.parent.postMessage(activeTab, "*")
+  }, [activeTab])
 
   return (
     <div className="mx-auto flex h-dvh max-w-md flex-col overflow-hidden bg-ice">
