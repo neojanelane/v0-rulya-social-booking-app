@@ -13,8 +13,18 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<Tab>("connect")
 
   useEffect(() => {
-    window.parent.postMessage(activeTab, "*")
-  }, [activeTab])
+    const handleScrollMessage = (event: MessageEvent) => {
+      const validTabs: Tab[] = ['connect', 'courts', 'sports'];
+      
+      // If the website sends a valid tab name, update the app's active tab
+      if (typeof event.data === 'string' && validTabs.includes(event.data as Tab)) {
+        setActiveTab(event.data as Tab); 
+      }
+    };
+
+    window.addEventListener('message', handleScrollMessage);
+    return () => window.removeEventListener('message', handleScrollMessage);
+  }, []);
 
   return (
     <div className="mx-auto flex h-dvh max-w-md flex-col overflow-hidden bg-ice">
